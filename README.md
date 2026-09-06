@@ -1,4 +1,6 @@
-# 慢系统
+# 慢系统（slow-motion）
+
+A WeChat mini program that helps friends and relatives keep objectives visible and reduce daily entropy.
 
 可被亲友看见的计划与督促小程序。灵感来自《思考，快与慢》：用轻松的最小动作（系统 1）完成每日进度，用阶段目标（系统 2）看清方向。
 
@@ -31,15 +33,16 @@ docs/                 产品与架构说明
 
 1. 用微信开发者工具打开 `慢系统` 这一层文件夹（AppID 已写入：`wx44b8ea3d94ca4052`）。
 2. 点击「云开发」，开通云环境。把环境 ID 填进 `miniprogram/config.ts` 的 `CLOUD_ENV_ID`。若只有一个环境，可暂留空。
-3. 在云开发控制台创建这些集合，权限选「仅创建者可读写」也可以，**推荐「所有用户不可读写」**（由云函数代写）：
+3. **先点选左侧 `cloudfunctions` 根目录并选择云环境**，再右键 `api` 上传。详见 [docs/DEVTOOLS.md](./docs/DEVTOOLS.md)。
+4. 在云开发控制台创建这些集合，**推荐「所有用户不可读写」**（由云函数代写）：
    - `users`
    - `plans`
    - `plan_members`
    - `checkins`
    - `nudges`
-4. 右键 `cloudfunctions/api` → 上传并部署：云端安装依赖。
-5. 同样上传 `nudgeExpire`（带定时触发器）。
-6. 编译运行。若控制台提示缺少索引，按提示创建即可。
+5. 右键 `cloudfunctions/api` → 上传并部署：云端安装依赖。
+6. 同样上传 `nudgeExpire`（带定时触发器）。
+7. 编译运行。若控制台提示缺少索引，按提示创建即可。
 
 ## 第一期怎么试
 
@@ -52,10 +55,13 @@ docs/                 产品与架构说明
 
 ## Git
 
+远程仓库：https://github.com/ttroy19011/slow-motion.git
+
 ```bash
 git status
 git add <文件>
 git commit -m "说明这次为什么改"
+git push
 ```
 
 请不要把云环境密钥、真实用户数据提交进仓库。

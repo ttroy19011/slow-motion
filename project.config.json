@@ -34,7 +34,13 @@
       "typescript"
     ],
     "compileHotReLoad": true,
-    "ignoreUploadUnusedFiles": true
+    "ignoreUploadUnusedFiles": true,
+    "compileWorklet": false,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "condition": false
   },
   "editorSetting": {
     "tabIndent": "insertSpaces",
