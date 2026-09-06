@@ -1,0 +1,23 @@
+.title {
+  font-size: 32rpx;
+  font-weight: 650;
+}
+
+.desc {
+  display: block;
+  margin-top: 10rpx;
+  color: var(--muted);
+  font-size: 24rpx;
+}
+
+.extra {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 24rpx;
+}
+
+.metrics {
+  margin-top: 24rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid var(--line);
+}

@@ -1,0 +1,58 @@
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48rpx 28rpx;
+}
+
+.avatar-btn {
+  padding: 0;
+  margin: 0;
+  width: 128rpx;
+  height: 128rpx;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.avatar-btn::after {
+  border: none;
+}
+
+.avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  background: var(--accent-soft);
+}
+
+.avatar-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 44rpx;
+  font-weight: 650;
+}
+
+.nick {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: 650;
+}
+
+.hint {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+}
+
+.about-title {
+  display: block;
+  margin-bottom: 12rpx;
+  font-weight: 650;
+}
+
+.about {
+  display: block;
+  font-size: 26rpx;
+}

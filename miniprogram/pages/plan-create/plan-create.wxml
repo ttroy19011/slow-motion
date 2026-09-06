@@ -1,0 +1,39 @@
+<view class="page">
+  <view class="hero">
+    <text class="hero-title">给慢系统一件事</text>
+    <text class="hero-sub">名称越具体越好，例如「每天阅读 30 分钟」。</text>
+  </view>
+
+  <view class="card">
+    <view class="field">
+      <text class="field-label">计划名称</text>
+      <input class="input" maxlength="20" placeholder="例如：每天阅读" value="{{title}}" bindinput="onTitle" />
+    </view>
+    <view class="field">
+      <text class="field-label">一句话说明（可选）</text>
+      <textarea class="textarea" maxlength="80" placeholder="为什么要做这件事" value="{{description}}" bindinput="onDesc" />
+    </view>
+    <view class="field">
+      <text class="field-label">每日最小动作</text>
+      <view class="chip-row">
+        <view
+          class="chip {{dailyTargetMinutes === item ? 'chip-on' : ''}}"
+          wx:for="{{minuteOptions}}"
+          wx:key="*this"
+          data-m="{{item}}"
+          bindtap="onMinutes"
+        >{{item}} 分钟</view>
+      </view>
+    </view>
+    <view class="field">
+      <text class="field-label">第一阶段名称</text>
+      <input class="input" maxlength="20" value="{{stageTitle}}" bindinput="onStageTitle" />
+    </view>
+    <view class="field">
+      <text class="field-label">第一阶段目标天数</text>
+      <input class="input" type="number" value="{{stageTargetDays}}" bindinput="onStageDays" />
+    </view>
+  </view>
+
+  <button class="btn btn-primary" bindtap="onSubmit">创建计划</button>
+</view>

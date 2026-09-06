@@ -1,0 +1,14 @@
+.nudge-card {
+  margin-bottom: 20rpx;
+  border: 2rpx solid #f0d8c8;
+}
+
+.nudge-from {
+  font-weight: 600;
+}
+
+.nudge-plan {
+  display: block;
+  margin-top: 10rpx;
+  color: var(--muted);
+}

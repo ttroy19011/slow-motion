@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "module": "ESNext",
+    "target": "ES2018",
+    "lib": ["ES2018"],
+    "allowJs": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "types": ["miniprogram-api-typings"]
+  },
+  "include": ["miniprogram/**/*.ts"],
+  "exclude": ["node_modules", "cloudfunctions", "微信web开发者工具"]
+}

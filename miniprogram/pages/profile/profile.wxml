@@ -1,0 +1,40 @@
+<view class="page">
+  <view class="card profile-card">
+    <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <image wx:if="{{avatarUrl}}" class="avatar" src="{{avatarUrl}}" mode="aspectFill" />
+      <view wx:else class="avatar avatar-ph">慢</view>
+    </button>
+    <input
+      class="nick"
+      type="nickname"
+      maxlength="16"
+      placeholder="点这里填写称呼"
+      value="{{nickName}}"
+      bindblur="onNickBlur"
+    />
+    <text class="muted hint">称呼和头像只用于亲友识别，可随时改。</text>
+  </view>
+
+  <view class="card">
+    <view class="metrics">
+      <view class="metric">
+        <text class="metric-n">{{planCount}}</text>
+        <text class="metric-l">我的计划</text>
+      </view>
+      <view class="metric">
+        <text class="metric-n">{{totalDays}}</text>
+        <text class="metric-l">累计完成天数</text>
+      </view>
+      <view class="metric">
+        <text class="metric-n">{{durationText}}</text>
+        <text class="metric-l">累计时长</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <text class="about-title">关于慢系统</text>
+    <text class="muted about">灵感来自《思考，快与慢》：系统 1 负责轻松的最小动作，系统 2 负责制定计划和阶段目标。亲友看见进度，本身就是一种温和的承诺装置。</text>
+    <text class="muted about" wx:if="{{cloudHint}}">{{cloudHint}}</text>
+  </view>
+</view>

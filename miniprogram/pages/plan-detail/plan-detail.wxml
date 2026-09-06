@@ -1,0 +1,21 @@
+<view class="page" wx:if="{{detail}}">
+  <plan-card plan="{{detail.plan}}" />
+
+  <view class="card">
+    <text class="field-label">此刻角色</text>
+    <text class="body">{{roleText || '你还不是成员，可以关注这份计划。'}}</text>
+    <text class="field-label gap">关注的亲友</text>
+    <text class="body">{{watcherNames}}</text>
+    <block wx:if="{{latestNudgeText}}">
+      <text class="field-label gap">最近一次督促</text>
+      <text class="body">{{latestNudgeText}}</text>
+    </block>
+  </view>
+
+  <button class="btn btn-primary" wx:if="{{canCheckin}}" disabled="{{detail.todayChecked}}" bindtap="onCheckin">
+    {{detail.todayChecked ? '今日已完成' : '完成今日最小动作'}}
+  </button>
+  <button class="btn btn-ghost" wx:if="{{canFollow}}" bindtap="onFollow">关注这份计划</button>
+  <button class="btn btn-warm" wx:if="{{canNudge}}" bindtap="onNudge">轻轻督促一下</button>
+  <button class="btn btn-ghost" open-type="share">分享给亲友</button>
+</view>

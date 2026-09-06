@@ -1,0 +1,12 @@
+{
+  "name": "slow-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "慢系统：可被亲友看见的计划与督促小程序",
+  "scripts": {
+    "icons": "python scripts/gen_tab_icons.py"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^4.0.8"
+  }
+}

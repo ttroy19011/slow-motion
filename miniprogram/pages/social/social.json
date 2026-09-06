@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "plan-card": "../../components/plan-card/plan-card"
+  },
+  "navigationBarTitleText": "关注"
+}

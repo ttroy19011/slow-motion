@@ -1,0 +1,22 @@
+<view class="card" bindtap="onOpen">
+  <view class="row space">
+    <text class="title">{{plan.title}}</text>
+    <text class="tag" wx:if="{{stageTitle}}">{{stageTitle}}</text>
+  </view>
+  <text class="desc" wx:if="{{plan.description}}">{{plan.description}}</text>
+  <text class="extra muted" wx:if="{{extra}}">{{extra}}</text>
+  <view class="metrics">
+    <view class="metric">
+      <text class="metric-n">{{plan.streak || 0}}</text>
+      <text class="metric-l">已连续（天）</text>
+    </view>
+    <view class="metric">
+      <text class="metric-n">{{plan.totalDays || 0}}</text>
+      <text class="metric-l">累计（天）</text>
+    </view>
+    <view class="metric">
+      <text class="metric-n">{{durationText}}</text>
+      <text class="metric-l">累计时长</text>
+    </view>
+  </view>
+</view>

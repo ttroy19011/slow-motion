@@ -1,0 +1,28 @@
+<view class="page" wx:if="{{nudge}}">
+  <view class="hero">
+    <text class="kicker">{{nudge.fromName}} 的督促</text>
+    <text class="hero-title">{{nudge.planTitle}}</text>
+    <text class="hero-sub">{{expired ? '已超过 30 分钟。仍可完成，或选择延迟。' : '30 分钟内做一个最小动作即可。'}}</text>
+  </view>
+
+  <view class="card clock-card">
+    <text class="clock-label">剩余时间</text>
+    <text class="clock">{{remain}}</text>
+  </view>
+
+  <button class="btn btn-primary" bindtap="onDone">30 分钟内满足 / 现在完成</button>
+
+  <view class="card delay-card">
+    <text class="field-label">如果现在做不到，选择延迟</text>
+    <view class="chip-row">
+      <view
+        class="chip {{chosen === item.key ? 'chip-on' : ''}}"
+        wx:for="{{delays}}"
+        wx:key="key"
+        data-key="{{item.key}}"
+        bindtap="onChoose"
+      >{{item.label}}</view>
+    </view>
+    <button class="btn btn-ghost" bindtap="onDelay">确认延迟</button>
+  </view>
+</view>

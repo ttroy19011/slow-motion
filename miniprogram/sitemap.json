@@ -1,0 +1,9 @@
+{
+  "desc": "慢系统 sitemap",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

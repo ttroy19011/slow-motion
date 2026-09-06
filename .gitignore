@@ -1,0 +1,19 @@
+# 依赖
+node_modules/
+**/node_modules/
+miniprogram/miniprogram_npm/
+package-lock.json
+
+# 本机偏好，不共享
+project.private.config.json
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.swp
+
+# 云函数本地缓存
+cloudfunctions/**/.cloudbase/
