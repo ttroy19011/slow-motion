@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "我的"
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "plan-card": "../../components/plan-card/plan-card",
+    "heat-calendar": "../../components/heat-calendar/heat-calendar"
+  }
 }

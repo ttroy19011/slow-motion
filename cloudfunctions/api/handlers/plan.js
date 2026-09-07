@@ -136,4 +136,45 @@ async function getSocial({ cloud, openid }) {
   }
 }
 
-module.exports = { createPlan, getPlan, getHome, getSocial }
+async function getProfile({ cloud, openid }) {
+  const user = await login({ cloud, openid, payload: {} })
+  const mine = await membersOf(cloud, openid)
+  const planIds = unique(
+    mine.filter((item) => item.role === 'owner' || item.role === 'doer').map((item) => item.planId)
+  )
+  const plans = (await plansByIds(cloud, planIds)).sort(
+    (a, b) => (b.updatedAt || 0) - (a.updatedAt || 0)
+  )
+  const checkinCounts = {}
+  const db = cloud.database()
+  const _ = db.command
+  const since = todayCST(Date.now() - 370 * 86400000)
+  const pageSize = 100
+  let skip = 0
+  for (let i = 0; i < 10; i += 1) {
+    const res = await db
+      .collection('checkins')
+      .where({
+        openid,
+        date: _.gte(since)
+      })
+      .skip(skip)
+      .limit(pageSize)
+      .get()
+    res.data.forEach((item) => {
+      const key = item.date
+      if (!key) return
+      checkinCounts[key] = (checkinCounts[key] || 0) + 1
+    })
+    if (res.data.length < pageSize) break
+    skip += pageSize
+  }
+  return {
+    user,
+    plans,
+    checkinCounts,
+    cloudReady: true
+  }
+}
+
+module.exports = { createPlan, getPlan, getHome, getSocial, getProfile }

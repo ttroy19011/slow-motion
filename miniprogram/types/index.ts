@@ -1,6 +1,7 @@
 export type PlanMemberRole = 'owner' | 'doer' | 'watcher'
 export type NudgeStatus = 'pending' | 'done' | 'delayed' | 'expired'
 export type DelayKey = '1h' | 'tonight' | 'tomorrow'
+export type PlanLifecycle = 'future' | 'active' | 'done'
 
 export interface UserProfile {
   _id?: string
@@ -78,6 +79,13 @@ export interface PlanDetailData {
 export interface SocialData {
   watching: Plan[]
   myPlans: Array<Plan & { watchers: PlanMember[] }>
+}
+
+export interface ProfileData {
+  user: UserProfile
+  plans: Plan[]
+  checkinCounts: Record<string, number>
+  cloudReady: boolean
 }
 
 export interface ApiOk<T> {

@@ -1,5 +1,5 @@
 import type { Plan } from '../../types/index'
-import { currentStageTitle, formatDuration } from '../../utils/format'
+import { currentStageTitle, formatDuration, planStatusLabel } from '../../utils/format'
 
 Component({
   properties: {
@@ -10,18 +10,24 @@ Component({
     extra: {
       type: String,
       value: ''
+    },
+    showStatus: {
+      type: Boolean,
+      value: false
     }
   },
   data: {
     durationText: '',
-    stageTitle: ''
+    stageTitle: '',
+    statusText: ''
   },
   observers: {
-    plan(plan: Plan) {
+    'plan, showStatus'(plan: Plan, showStatus: boolean) {
       if (!plan || !plan.title) return
       this.setData({
         durationText: formatDuration(plan.totalMinutes || 0),
-        stageTitle: currentStageTitle(plan)
+        stageTitle: currentStageTitle(plan),
+        statusText: showStatus ? planStatusLabel(plan) : ''
       })
     }
   },

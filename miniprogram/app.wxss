@@ -132,28 +132,44 @@ page {
 }
 
 .field {
-  margin-bottom: 28rpx;
+  margin-bottom: 32rpx;
+}
+
+.field:last-child {
+  margin-bottom: 0;
 }
 
 .field-label {
   display: block;
-  margin-bottom: 12rpx;
+  margin-bottom: 14rpx;
   color: var(--muted);
   font-size: 24rpx;
 }
 
 .input,
 .textarea {
+  display: block;
   width: 100%;
   box-sizing: border-box;
   background: #f7f3ec;
-  border-radius: 16rpx;
-  padding: 20rpx 24rpx;
-  font-size: 28rpx;
+  border-radius: 18rpx;
+  padding: 26rpx 28rpx;
+  font-size: 32rpx;
+  line-height: 1.45;
+  color: var(--ink);
+  min-height: 96rpx;
 }
 
 .textarea {
-  min-height: 140rpx;
+  min-height: 180rpx;
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+}
+
+.input-placeholder,
+.textarea-placeholder {
+  color: #b0aaa0;
+  font-size: 30rpx;
 }
 
 .chip-row {

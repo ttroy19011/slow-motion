@@ -6,33 +6,42 @@
   </view>
 
   <block wx:if="{{pendingNudges.length}}">
-    <view class="section-title">待回应的督促</view>
-    <view
-      class="card nudge-card"
-      wx:for="{{pendingNudges}}"
-      wx:key="_id"
-      data-id="{{item._id}}"
-      bindtap="onOpenNudge"
-    >
-      <view class="row space">
-        <text class="nudge-from">{{item.fromName}} 请你回应</text>
-        <text class="tag-warm">还剩 {{item.remain}}</text>
+    <view class="section-head">
+      <text class="section-title">待回应的督促</text>
+    </view>
+    <view class="nudge-list">
+      <view
+        class="card nudge-card"
+        wx:for="{{pendingNudges}}"
+        wx:key="_id"
+        data-id="{{item._id}}"
+        bindtap="onOpenNudge"
+      >
+        <view class="row space">
+          <text class="nudge-from">{{item.fromName}} 请你回应</text>
+          <text class="tag-warm">还剩 {{item.remain}}</text>
+        </view>
+        <text class="nudge-plan">{{item.planTitle}}</text>
       </view>
-      <text class="nudge-plan">{{item.planTitle}}</text>
     </view>
   </block>
 
-  <view class="section-title">我的计划</view>
+  <view class="section-head">
+    <text class="section-title">我的计划</text>
+    <text class="section-hint" wx:if="{{!empty}}">共 {{plans.length}} 件</text>
+  </view>
   <view class="empty card" wx:if="{{empty && !loading}}">
     <text class="empty-title">还没有计划</text>
     <text>从一件小事开始。制定后可分享给亲友关注，也可接受他们的轻轻督促。</text>
   </view>
-  <plan-card
-    wx:for="{{plans}}"
-    wx:key="_id"
-    plan="{{item}}"
-    bind:open="onOpenPlan"
-  />
+  <view class="plan-list" wx:else>
+    <plan-card
+      wx:for="{{plans}}"
+      wx:key="_id"
+      plan="{{item}}"
+      bind:open="onOpenPlan"
+    />
+  </view>
 
-  <button class="btn btn-primary" bindtap="onCreate">制定计划</button>
+  <button class="btn btn-primary create-btn" bindtap="onCreate">制定计划</button>
 </view>

@@ -1,14 +1,64 @@
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 8rpx 8rpx 20rpx;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 30rpx;
+  font-weight: 650;
+  letter-spacing: 1rpx;
+}
+
+.section-hint {
+  color: var(--muted);
+  font-size: 22rpx;
+}
+
+.nudge-list {
+  margin-bottom: 36rpx;
+}
+
 .nudge-card {
   margin-bottom: 20rpx;
   border: 2rpx solid #f0d8c8;
 }
 
+.nudge-card:last-child {
+  margin-bottom: 0;
+}
+
 .nudge-from {
   font-weight: 600;
+  font-size: 28rpx;
 }
 
 .nudge-plan {
   display: block;
-  margin-top: 10rpx;
+  margin-top: 12rpx;
   color: var(--muted);
+  font-size: 24rpx;
+}
+
+.plan-list {
+  display: block;
+}
+
+.plan-list plan-card {
+  display: block;
+  margin-bottom: 28rpx;
+}
+
+.plan-list plan-card:last-child {
+  margin-bottom: 8rpx;
+}
+
+.create-btn {
+  margin-top: 36rpx;
+}
+
+.hero-sub {
+  line-height: 1.6;
 }

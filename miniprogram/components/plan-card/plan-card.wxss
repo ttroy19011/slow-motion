@@ -1,23 +1,60 @@
+.plan-card {
+  margin-top: 0;
+  padding: 32rpx 28rpx;
+  border: 1rpx solid var(--line);
+  box-shadow: 0 10rpx 28rpx rgba(64, 52, 32, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 8rpx;
+  background: var(--accent);
+}
+
+.head {
+  gap: 16rpx;
+}
+
 .title {
-  font-size: 32rpx;
+  flex: 1;
+  min-width: 0;
+  font-size: 34rpx;
   font-weight: 650;
+  line-height: 1.35;
+  word-break: break-word;
 }
 
 .desc {
   display: block;
-  margin-top: 10rpx;
+  margin-top: 12rpx;
   color: var(--muted);
   font-size: 24rpx;
+  line-height: 1.55;
 }
 
-.extra {
+.extra,
+.stage {
   display: block;
   margin-top: 12rpx;
   font-size: 24rpx;
 }
 
 .metrics {
-  margin-top: 24rpx;
-  padding-top: 20rpx;
+  margin-top: 28rpx;
+  padding-top: 24rpx;
   border-top: 1rpx solid var(--line);
+}
+
+.metric-n {
+  font-size: 34rpx;
+}
+
+.metric-l {
+  margin-top: 6rpx;
 }

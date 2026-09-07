@@ -1,4 +1,12 @@
-import type { HomeData, Plan, PlanDetailData, SocialData, UserProfile, Nudge } from '../types/index'
+import type {
+  HomeData,
+  Plan,
+  PlanDetailData,
+  ProfileData,
+  SocialData,
+  UserProfile,
+  Nudge
+} from '../types/index'
 
 async function callApi<T>(action: string, payload: Record<string, unknown> = {}): Promise<T> {
   const res = await wx.cloud.callFunction({
@@ -17,6 +25,7 @@ export const api = {
   updateProfile: (nickName: string, avatarUrl: string) =>
     callApi<UserProfile>('updateProfile', { nickName, avatarUrl }),
   getHome: () => callApi<HomeData>('getHome'),
+  getProfile: () => callApi<ProfileData>('getProfile'),
   createPlan: (payload: {
     title: string
     description: string

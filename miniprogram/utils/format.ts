@@ -1,4 +1,4 @@
-import type { Plan } from '../types/index'
+import type { Plan, PlanLifecycle } from '../types/index'
 
 export function formatDuration(minutes: number): string {
   const m = Math.max(0, Math.round(minutes))
@@ -29,4 +29,18 @@ export function nudgeStatusText(status: string, delayLabel?: string): string {
   if (status === 'delayed') return `已延迟：${delayLabel || '稍后'}`
   if (status === 'expired') return '超时未回应'
   return ''
+}
+
+export function planLifecycle(plan: Plan): PlanLifecycle {
+  const stages = plan.stages || []
+  if (stages.length > 0 && stages.every((item) => item.completed)) return 'done'
+  if (!plan.totalDays && !plan.lastCheckinDate) return 'future'
+  return 'active'
+}
+
+export function planStatusLabel(plan: Plan): string {
+  const status = planLifecycle(plan)
+  if (status === 'done') return '已完成'
+  if (status === 'future') return '尚未开始'
+  return '进行中'
 }

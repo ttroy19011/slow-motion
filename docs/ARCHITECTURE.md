@@ -62,6 +62,7 @@ watcher 才能督促；doer 才能打卡和回应督促。
 |---|---|---|
 | login / updateProfile | 当前用户 | 用户文档 |
 | getHome | 当前用户 | 我的计划 + 待回应督促 |
+| getProfile | 当前用户 | 计划列表 + 近一年打卡计数（热力日历） |
 | createPlan | 当前用户 | 新计划，并写入 owner+doer |
 | getPlan | 知道 planId 的人 | 计划、成员、最近督促 |
 | checkin | doer | 更新连续/累计/阶段 |

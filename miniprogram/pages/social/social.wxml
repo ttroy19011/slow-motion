@@ -8,22 +8,26 @@
   <view class="empty card" wx:if="{{emptyWatch}}">
     <text>还没有关注别人。让亲友把计划分享给你，点「关注这份计划」即可。</text>
   </view>
-  <plan-card
-    wx:for="{{watching}}"
-    wx:key="_id"
-    plan="{{item}}"
-    bind:open="onOpen"
-  />
+  <view class="plan-list" wx:else>
+    <plan-card
+      wx:for="{{watching}}"
+      wx:key="_id"
+      plan="{{item}}"
+      bind:open="onOpen"
+    />
+  </view>
 
   <view class="section-title">关注我的计划</view>
   <view class="empty card" wx:if="{{emptyMine}}">
     <text>先在「今日」制定一份计划，再分享给亲友。</text>
   </view>
-  <plan-card
-    wx:for="{{myPlans}}"
-    wx:key="_id"
-    plan="{{item}}"
-    extra="{{item.watcherText}}"
-    bind:open="onOpen"
-  />
+  <view class="plan-list" wx:else>
+    <plan-card
+      wx:for="{{myPlans}}"
+      wx:key="_id"
+      plan="{{item}}"
+      extra="{{item.watcherText}}"
+      bind:open="onOpen"
+    />
+  </view>
 </view>

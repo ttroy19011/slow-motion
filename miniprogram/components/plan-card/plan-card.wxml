@@ -1,10 +1,12 @@
-<view class="card" bindtap="onOpen">
-  <view class="row space">
+<view class="card plan-card" bindtap="onOpen">
+  <view class="row space head">
     <text class="title">{{plan.title}}</text>
-    <text class="tag" wx:if="{{stageTitle}}">{{stageTitle}}</text>
+    <text class="tag" wx:if="{{statusText}}">{{statusText}}</text>
+    <text class="tag" wx:elif="{{stageTitle}}">{{stageTitle}}</text>
   </view>
   <text class="desc" wx:if="{{plan.description}}">{{plan.description}}</text>
   <text class="extra muted" wx:if="{{extra}}">{{extra}}</text>
+  <text class="stage muted" wx:if="{{statusText && stageTitle}}">当前阶段：{{stageTitle}}</text>
   <view class="metrics">
     <view class="metric">
       <text class="metric-n">{{plan.streak || 0}}</text>

@@ -4,14 +4,35 @@
     <text class="hero-sub">名称越具体越好，例如「每天阅读 30 分钟」。</text>
   </view>
 
-  <view class="card">
+  <view class="card form-card">
     <view class="field">
       <text class="field-label">计划名称</text>
-      <input class="input" maxlength="20" placeholder="例如：每天阅读" value="{{title}}" bindinput="onTitle" />
+      <input
+        class="input form-input"
+        maxlength="20"
+        placeholder="例如：每天阅读"
+        placeholder-class="input-placeholder"
+        value="{{title}}"
+        bindinput="onTitle"
+        confirm-type="next"
+        adjust-position="{{true}}"
+        cursor-spacing="24"
+      />
     </view>
     <view class="field">
       <text class="field-label">一句话说明（可选）</text>
-      <textarea class="textarea" maxlength="80" placeholder="为什么要做这件事" value="{{description}}" bindinput="onDesc" />
+      <textarea
+        class="textarea form-textarea"
+        maxlength="80"
+        placeholder="为什么要做这件事"
+        placeholder-class="textarea-placeholder"
+        value="{{description}}"
+        bindinput="onDesc"
+        auto-height="{{true}}"
+        adjust-position="{{true}}"
+        cursor-spacing="24"
+        show-confirm-bar="{{false}}"
+      />
     </view>
     <view class="field">
       <text class="field-label">每日最小动作</text>
@@ -27,13 +48,33 @@
     </view>
     <view class="field">
       <text class="field-label">第一阶段名称</text>
-      <input class="input" maxlength="20" value="{{stageTitle}}" bindinput="onStageTitle" />
+      <input
+        class="input form-input"
+        maxlength="20"
+        placeholder="例如：第一周第一阶段"
+        placeholder-class="input-placeholder"
+        value="{{stageTitle}}"
+        bindinput="onStageTitle"
+        confirm-type="next"
+        adjust-position="{{true}}"
+        cursor-spacing="24"
+      />
     </view>
     <view class="field">
       <text class="field-label">第一阶段目标天数</text>
-      <input class="input" type="number" value="{{stageTargetDays}}" bindinput="onStageDays" />
+      <input
+        class="input form-input"
+        type="number"
+        placeholder="例如：7"
+        placeholder-class="input-placeholder"
+        value="{{stageTargetDays}}"
+        bindinput="onStageDays"
+        confirm-type="done"
+        adjust-position="{{true}}"
+        cursor-spacing="24"
+      />
     </view>
   </view>
 
-  <button class="btn btn-primary" bindtap="onSubmit">创建计划</button>
+  <button class="btn btn-primary submit-btn" bindtap="onSubmit">创建计划</button>
 </view>

@@ -9,13 +9,16 @@
       type="nickname"
       maxlength="16"
       placeholder="点这里填写称呼"
+      placeholder-class="input-placeholder"
       value="{{nickName}}"
       bindblur="onNickBlur"
+      adjust-position="{{true}}"
+      cursor-spacing="24"
     />
     <text class="muted hint">称呼和头像只用于亲友识别，可随时改。</text>
   </view>
 
-  <view class="card">
+  <view class="card stats-card">
     <view class="metrics">
       <view class="metric">
         <text class="metric-n">{{planCount}}</text>
@@ -32,7 +35,33 @@
     </view>
   </view>
 
-  <view class="card">
+  <view class="card calendar-card">
+    <heat-calendar checkinCounts="{{checkinCounts}}" />
+  </view>
+
+  <view class="section-head">
+    <text class="section-title">我的计划</text>
+    <text class="section-hint">点进卡片看详情</text>
+  </view>
+  <view class="empty card" wx:if="{{emptyPlans}}">
+    <text class="empty-title">还没有计划</text>
+    <text>去「今日」制定第一件事后，会按进行中 / 尚未开始 / 已完成分组。</text>
+  </view>
+  <block wx:for="{{groups}}" wx:key="key">
+    <view class="group-title">{{item.title}}</view>
+    <view class="plan-list">
+      <plan-card
+        wx:for="{{item.plans}}"
+        wx:for-item="plan"
+        wx:key="_id"
+        plan="{{plan}}"
+        showStatus="{{true}}"
+        bind:open="onOpenPlan"
+      />
+    </view>
+  </block>
+
+  <view class="card about-card">
     <text class="about-title">关于慢系统</text>
     <text class="muted about">灵感来自《思考，快与慢》：系统 1 负责轻松的最小动作，系统 2 负责制定计划和阶段目标。亲友看见进度，本身就是一种温和的承诺装置。</text>
     <text class="muted about" wx:if="{{cloudHint}}">{{cloudHint}}</text>

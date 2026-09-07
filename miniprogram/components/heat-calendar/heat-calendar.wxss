@@ -1,0 +1,147 @@
+.heat {
+  width: 100%;
+}
+
+.heat-top {
+  margin-bottom: 20rpx;
+}
+
+.heat-title {
+  font-size: 28rpx;
+  font-weight: 650;
+}
+
+.heat-sub {
+  color: var(--muted);
+  font-size: 22rpx;
+}
+
+.heat-scroll {
+  width: 100%;
+}
+
+.heat-board {
+  display: inline-block;
+  min-width: 100%;
+  padding-bottom: 8rpx;
+}
+
+.month-row,
+.grid-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.weekday-spacer {
+  width: 36rpx;
+  flex-shrink: 0;
+}
+
+.month-labels {
+  display: flex;
+}
+
+.month-label {
+  width: 28rpx;
+  font-size: 16rpx;
+  color: var(--muted);
+  line-height: 1.2;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.weekdays {
+  width: 36rpx;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.weekday {
+  height: 22rpx;
+  margin-bottom: 6rpx;
+  line-height: 22rpx;
+  font-size: 16rpx;
+  color: var(--muted);
+}
+
+.weekday:last-child {
+  margin-bottom: 0;
+}
+
+.weeks {
+  display: flex;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  margin-right: 6rpx;
+}
+
+.week:last-child {
+  margin-right: 0;
+}
+
+.day {
+  width: 22rpx;
+  height: 22rpx;
+  margin-bottom: 6rpx;
+  border-radius: 4rpx;
+  background: #ebe6dc;
+}
+
+.week .day:last-child {
+  margin-bottom: 0;
+}
+
+.lv0 {
+  background: #ebe6dc;
+}
+
+.lv1 {
+  background: #c7d7cc;
+}
+
+.lv2 {
+  background: #8fb39a;
+}
+
+.lv3 {
+  background: #5f8a6d;
+}
+
+.lv4 {
+  background: #3f5b4d;
+}
+
+.legend {
+  margin-top: 18rpx;
+  align-items: center;
+}
+
+.tip {
+  flex: 1;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 22rpx;
+}
+
+.legend-scale {
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.legend-scale .day {
+  margin-left: 6rpx;
+  margin-bottom: 0;
+}
+
+.legend-scale .legend-text {
+  margin-left: 6rpx;
+}
+
+.legend-text {
+  color: var(--muted);
+  font-size: 18rpx;
+}

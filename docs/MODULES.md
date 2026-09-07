@@ -11,7 +11,7 @@
 | 计划详情 | 点进一张计划卡片 | `pages/plan-detail` | `getPlan` `checkin` `followPlan` `sendNudge` | 进度、分享、关注、督促 |
 | 回应督促 | 点首页督促卡片 | `pages/nudge` | `getNudge` `respondNudge` | 30 分钟完成或延迟 |
 | 关注 | Tab「关注」 | `pages/social` | `getSocial` | 我关注的 / 关注我的 |
-| 我的 | Tab「我的」 | `pages/profile` | `getHome` `updateProfile` | 头像称呼、累计统计 |
+| 我的 | Tab「我的」 | `pages/profile` | `getProfile` `updateProfile` | 分组计划、打卡热力日历、头像称呼 |
 
 底部三个 Tab 在 `miniprogram/app.json` 的 `tabBar`。图标在 `miniprogram/assets/`。
 
@@ -19,7 +19,8 @@
 
 | 组件 | 文件 | 出现在哪些页 | 作用 |
 |---|---|---|---|
-| 计划卡片 | `components/plan-card` | 今日、关注、详情顶部 | 连续天数 / 累计天数 / 累计时长 / 当前阶段 |
+| 计划卡片 | `components/plan-card` | 今日、关注、我的、详情顶部 | 连续天数 / 累计天数 / 累计时长 / 状态 |
+| 打卡热力日历 | `components/heat-calendar` | 我的 | 近 17 周 GitHub 风格完成日历 |
 
 ## 前端支撑模块
 

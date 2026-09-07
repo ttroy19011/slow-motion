@@ -3,7 +3,7 @@ const cloud = require('wx-server-sdk')
 cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV })
 
 const { login, updateProfile } = require('./handlers/user')
-const { createPlan, getPlan, getHome, getSocial } = require('./handlers/plan')
+const { createPlan, getPlan, getHome, getSocial, getProfile } = require('./handlers/plan')
 const { checkin } = require('./handlers/checkin')
 const { followPlan } = require('./handlers/follow')
 const { sendNudge, getNudge, respondNudge, expireNudges } = require('./handlers/nudge')
@@ -14,6 +14,7 @@ const handlers = {
   createPlan,
   getPlan,
   getHome,
+  getProfile,
   getSocial,
   checkin,
   followPlan,

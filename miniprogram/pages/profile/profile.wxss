@@ -36,6 +36,9 @@
 
 .nick {
   margin-top: 20rpx;
+  width: 80%;
+  min-height: 72rpx;
+  line-height: 1.4;
   text-align: center;
   font-size: 34rpx;
   font-weight: 650;
@@ -44,6 +47,47 @@
 .hint {
   margin-top: 8rpx;
   font-size: 22rpx;
+}
+
+.stats-card,
+.calendar-card,
+.about-card {
+  margin-top: 20rpx;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 36rpx 8rpx 16rpx;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 30rpx;
+  font-weight: 650;
+}
+
+.section-hint {
+  color: var(--muted);
+  font-size: 22rpx;
+}
+
+.group-title {
+  margin: 12rpx 8rpx 16rpx;
+  color: var(--muted);
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.plan-list {
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.plan-list plan-card {
+  display: block;
+  margin-bottom: 24rpx;
 }
 
 .about-title {
@@ -55,4 +99,9 @@
 .about {
   display: block;
   font-size: 26rpx;
+  line-height: 1.6;
+}
+
+.about + .about {
+  margin-top: 12rpx;
 }

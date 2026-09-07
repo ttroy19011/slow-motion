@@ -1,3 +1,20 @@
 .section-title {
   margin-top: 28rpx;
+  margin-bottom: 18rpx;
+  font-size: 30rpx;
+  font-weight: 650;
+}
+
+.plan-list {
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.plan-list plan-card {
+  display: block;
+  margin-bottom: 28rpx;
+}
+
+.hero-sub {
+  line-height: 1.6;
 }
