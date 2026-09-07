@@ -57,7 +57,12 @@ docs/                 产品与架构说明
 
 远程仓库：https://github.com/ttroy19011/slow-motion.git
 
+- 日常开发：`slow-motion-1.0.0.1`（及后续版本分支）
+- 正式使用 / 部署：`main`
+- 详细约定：[docs/GIT.md](./docs/GIT.md)
+
 ```bash
+git checkout slow-motion-1.0.0.1
 git status
 git add <文件>
 git commit -m "说明这次为什么改"
